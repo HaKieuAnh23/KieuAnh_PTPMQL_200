@@ -1,16 +1,18 @@
-using DemoMVC.Models.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 using Microsoft.EntityFrameworkCore;
- 
-namespace DemoMVC.Data;
- 
-public class ApplicationDbContext : IdentityDbContext<IdentityApp>
+
+using DemoMVC.Models.Entities;
+
+namespace DemoMVC.Data 
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
+    public class ApplicationDbContext  : DbContext
     {
+        public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Student> Students { get; set; }
     }
- 
-    public DbSet<Student> Students { get; set; }
-    
 }
+   
