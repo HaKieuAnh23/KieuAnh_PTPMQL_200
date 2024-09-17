@@ -1,16 +1,16 @@
-
+using DemoMVC.Models.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using DemoMVC.Models;
-
-namespace DemoMVC.#pragma warning disable format
+ 
+namespace DemoMVC.Data;
+ 
+public class ApplicationDbContext : IdentityDbContext<IdentityApp>
 {
-    public class ApplicationDbcontext :Dbcontext
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
     {
-        public ApplicationDbcontext(Dbcontext0ptions<ApplicationDbcontext> options) : base(options)
-        {
-            public DbSet<Sinh vien> Student {get; set;}
-        }
     }
+ 
+    public DbSet<Student> Students { get; set; }
+    
 }
-
-
