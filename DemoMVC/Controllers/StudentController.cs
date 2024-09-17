@@ -7,4 +7,10 @@ public class StudentController : Controller
     {
         return View();
     }
+    [HttpPost]
+     public IActionResult Index(Student std)
+    {
+        ViewBag.message = std.StudentID + "-" + std.FullName; 
+        return View();
+    }
 }
