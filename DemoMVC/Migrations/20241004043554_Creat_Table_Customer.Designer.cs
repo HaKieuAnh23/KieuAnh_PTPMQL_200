@@ -2,6 +2,7 @@
 using DemoMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,30 +10,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DemoMVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241004043554_Creat_Table_Customer")]
+    partial class Creat_Table_Customer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
-
-            modelBuilder.Entity("DemoMVC.Models.Entities.Person", b =>
-                {
-                    b.Property<string>("PersonID")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("HoTen")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("QueQuan")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("PersonID");
-
-                    b.ToTable("Person");
-                });
 
             modelBuilder.Entity("DemoMVC.Models.Entities.Student", b =>
                 {
